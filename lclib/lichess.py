@@ -11,3 +11,6 @@ def get_year_month_from_filename(filename):
     except Exception as e:
         pass
     raise Exception(f"Year, Month not found in filename {filename} {e}")
+
+def create_new_pgn_filename(year, month, eco, source="lichess"):
+    return source + "_" + str(year) + "_" + str(month) + "_" + eco + ".pgn"
