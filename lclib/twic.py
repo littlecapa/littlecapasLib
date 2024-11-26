@@ -1,5 +1,5 @@
 import os, zipfile, requests
-from download import readZip
+from .download import readZip
 
 def unzip_twic_file(filename_zip, unzip_folder):
     with zipfile.ZipFile(filename_zip, 'r') as zip_file:
