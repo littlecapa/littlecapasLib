@@ -25,9 +25,3 @@ def readZip(url, file_name_zip, attempts=1):
         except Exception as ex:
             print("Error: ", str(ex))
             raise ex
-
-  with zipfile.ZipFile(file, 'r') as zip_file:
-    zip_file.extractall(folder)
-    os.remove(file)
-  # Noch nicht zu Ende
-  return False
