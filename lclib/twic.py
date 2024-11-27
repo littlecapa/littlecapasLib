@@ -21,7 +21,7 @@ def download_twic_file(base_url, issue_number, download_dir, unzip_dir, twic_pat
         raise ex
     
 def exist_twic_file(issue_number, base_url, twic_pattern):
-    url, _ = get_file_info(issue_number, base_url, twic_pattern)
+    _, url = get_file_info(issue_number, base_url, twic_pattern)
     print(url)
     try:
         response = requests.head(url, allow_redirects=True)
