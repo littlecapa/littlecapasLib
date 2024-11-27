@@ -1,5 +1,6 @@
 import os, zipfile, requests
 from .download import readZip
+from urllib.parse import urljoin
 
 def unzip_twic_file(filename_zip, unzip_folder):
     with zipfile.ZipFile(filename_zip, 'r') as zip_file:
@@ -8,7 +9,7 @@ def unzip_twic_file(filename_zip, unzip_folder):
 
 def get_file_info(issue_number, base_url, twic_pattern):
     filename_zip = twic_pattern.replace("<<number>>", str(issue_number))
-    return filename_zip, base_url+filename_zip
+    return filename_zip, urljoin(base_url,filename_zip)
 
 def download_twic_file(base_url, issue_number, download_dir, unzip_dir, twic_pattern):
     url, filename_zip = get_file_info(issue_number, base_url, twic_pattern)
