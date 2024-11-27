@@ -27,6 +27,7 @@ def exist_twic_file(issue_number, base_url, twic_pattern):
     try:
         response = requests.head(url, allow_redirects=True)
         # Check if the response status code indicates success (200 OK)
+        print(response.status_code)
         return response.status_code == 200
     except requests.RequestException as e:
         print(f"Error checking file at {url}: {e}")
