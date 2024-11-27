@@ -1,6 +1,6 @@
 import unittest
 
-from  twic import get_highest_twic_issue, download_twic_file
+from  lclib.twic import get_highest_twic_issue, download_twic_file
 
 class TestLichessLib(unittest.TestCase):
     def test_get_highest_twic_issue(self):
